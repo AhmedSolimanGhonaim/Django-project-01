@@ -14,8 +14,9 @@ Including another URLconf
 
 
 from django.urls import path
-from categories.views import landing 
+from categories.views import landing , categories_home
 urlpatterns = [
-path('cats',landing,name='categories')
+    path('cats',landing,name='categories'),
+    path('home',categories_home,name='categories.home'),
     
 ]

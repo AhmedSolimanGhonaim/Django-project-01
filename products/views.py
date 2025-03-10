@@ -49,3 +49,8 @@ def product_details(request,id):
         print(all_products[0])
         return HttpResponse(all_products[0])
     return HttpResponse('Product not found')
+
+def products_home(request):
+    # return with template 
+    return render(request, "products/home.html", status=200) # also return with http response
+    
