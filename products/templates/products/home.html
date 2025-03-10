@@ -1,13 +1,88 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Home</title>
-    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'products/css/home.css' %}">  {% endcomment %}
-    {% comment %} bootstrap {% endcomment %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <h1>Welcome to the Home Page</h1>
-   
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | My Products</title>
 
-</body>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    {% comment %}
+    <link rel="stylesheet" href="{% static 'products/css/home.css' %}" />
+    {% endcomment %}
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">MyStore</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Welcome to Our Store</h1>
+        <p class="lead">Find the best products at the best prices</p>
+        <a href="#" class="btn btn-light btn-lg">Shop Now</a>
+      </div>
+    </header>
+
+    <!-- Products Section -->
+    <div>
+      <h1>Products</h1>
+
+      <div class="col-md-12 d-flex justify-content-center mx-auto my-3">
+        {% for prd in products %}
+        <div class="card shadow-sm mx-3  text-center">
+          <img
+            src="https://via.placeholder.com/300"
+            class="card-img-top"
+            alt="Product Image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{prd.name}}</h5>
+            <p class="card-text text-primary fw-bold">{{prd.price}}</p>
+            <a href="#" class="btn btn-outline-primary">View Details</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 MyStore. All rights reserved.</p>
+      <a href="#" class="text-light me-3">Privacy Policy</a>
+      <a href="#" class="text-light">Contact</a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -52,5 +52,7 @@ def product_details(request,id):
 
 def products_home(request):
     # return with template 
-    return render(request, "products/home.html", status=200) # also return with http response
+    return render(request, "products/home.html",
+                  context={"products":products} 
+                  ,status=200) # also return with http response
     

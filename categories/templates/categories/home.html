@@ -1,22 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Categories</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      {% comment %} href="{% static 'categories/css/categories.css' %}" {% endcomment %}
-    />
-    <!-- bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <h1 class="text-center">Welcome to the Categories Page</h1>
-      <div class="container"></div>
-    </div>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categories | MyStore</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    {% comment %} <link rel="stylesheet" href="{% static 'categories/css/categories.css' %}"> {% endcomment %}
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">{{name}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                    <li class="nav-item"><a class="btn btn-primary" href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-info text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Explore Our Categories</h1>
+            <p class="lead">Browse by category and find what you need.</p>
+        </div>
+    </header>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 MyStore. All rights reserved.</p>
+        <a href="#" class="text-light me-3">Privacy Policy</a>
+        <a href="#" class="text-light">Contact</a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -9,4 +9,6 @@ def landing(request):
  
  
 def categories_home(request):
-    return render(request, "categories/home.html",status=200)
+    return render(request, "categories/home.html",
+                  context = {"name":"ahmed","age":30}
+                  ,status=200)
