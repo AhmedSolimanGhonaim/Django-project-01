@@ -1,10 +1,11 @@
 from django.urls import path
-from products.views import hello  , welcome , landingPage , product_details , products_home
+from products.views import (products_home , product_profile)
 
 urlpatterns = [
     path('home', products_home , name='products.home'),
-    path('helloworld', hello, name='home'),
-    path('welc', welcome , name='welcomepage'),
-    path('land', landingPage , name='allproducts'),
-    path('prd/<int:id>', product_details , name='prd.details')
+    path('<int:id>', product_profile , name="products.profile")
+    # path('helloworld', hello, name='home'),
+    # path('welc', welcome , name='welcomepage'),
+    # path('land', landingPage , name='allproducts'),
+    # path('prd/<int:id>', product_details , name='prd.details'),
 ]

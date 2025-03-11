@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %} {% block title %} details of {{product.name}}
+{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<h2>{{product.name}} Details</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+     
+         <img
+        src="{% static 'products/images/'|add:product.image %}"
+        class="img-fluid"
+        alt="{{ product.name }}"
+      /> 
+
+
+     {% comment %} this was used with url images {% endcomment %}
+        {% comment %} <img
+        src="{{ product.image }}"
+        class="img-fluid"
+        alt="{{ product.name }}"
+      /> {% endcomment %}
+    </div>
+    <div class="col-md-6">
+      <h3>Details</h3>
+      <p class="text-primary fw-bold">{{product.price}}</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

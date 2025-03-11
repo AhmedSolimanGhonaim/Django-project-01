@@ -1,32 +1,25 @@
-{% extends 'layouts/base.html'  %}
-{% block title %} Products Home {% endblock  %}
+{% extends 'layouts/base.html' %} {% block title %} Products Home {% endblock %}
+{% load static %} {% block content %}
 
-{% block content %}
+<div>
+  <h1>Products</h1>
 
-    <div>
-      <h1>Products</h1>
-
-      <div class="col-md-12 d-flex justify-content-center mx-auto my-3">
-        {% for prd in products %}
-        <div class="card shadow-sm mx-3  text-center">
-          <img
-            src="https://via.placeholder.com/300"
-            class="card-img-top"
-            alt="Product Image"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{prd.name}}</h5>
-            <p class="card-text text-primary fw-bold">{{prd.price}}</p>
-            <a href="#" class="btn btn-outline-primary">View Details</a>
-          </div>
-        </div>
-        {% endfor %}
+  <div class="col-md-12 d-flex justify-content-center mx-auto my-3">
+    {% for prd in products %}
+    <div class="card shadow-sm mx-3 text-center">
+      <img
+        src="{% static 'products/images/'|add:prd.image%}"
+        class="card-img-top"
+        alt="Product Image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{prd.name}}</h5>
+        <p class="card-text text-primary fw-bold">{{prd.price}}</p>
+        <a href="{% url 'products.profile' prd.id %}" class="btn btn-outline-primary">View Details</a>
       </div>
     </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock content %}
-
-
-
-
-
