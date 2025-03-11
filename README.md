@@ -1,5 +1,9 @@
 # Project: SolEctro - Electronics Store
 
+## Screenshot
+
+![SolEctro Screenshot](home/static/home/images/sc.png)
+
 ## Description
 
 SolEctro is an e-commerce platform for electronics, offering a wide range of products including laptops, smartphones, tablets, and accessories. The platform features user authentication, product browsing, categories, and a shopping cart functionality.
@@ -33,10 +37,6 @@ SolEctro is an e-commerce platform for electronics, offering a wide range of pro
    ```sh
    python manage.py runserver
    ```
-
-## Screenshot
-
-![SolEctro Screenshot](home/static/home/images/sc.png)
 
 ## Usage
 
