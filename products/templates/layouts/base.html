@@ -15,7 +15,7 @@
     <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">solGhonaim</a>
+          <a class="navbar-brand" href="#">SolEctro</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -26,8 +26,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                <a class="nav-link {%if request.path == "/" %} active {% endif %}" href="{%url 'home'%}">Home</a>
+              </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{%url 'products.home'%}">Products</a>
+                <a class="nav-link {% if request.path == "/products/home" %} active {% endif %}" href="{%url 'products.home'%}">Products</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{%url 'categories.home'%}">Categories</a>

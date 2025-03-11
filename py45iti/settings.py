@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my registered apps
-    'products.apps.ProductsConfig',
-    'categories.apps.CategoriesConfig',
+     'home.apps.HomeConfig',
+     'products.apps.ProductsConfig',
+     'categories.apps.CategoriesConfig',
+   
     
 ]
 

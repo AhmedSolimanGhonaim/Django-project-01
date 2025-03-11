@@ -1,0 +1,101 @@
+{% extends 'layouts/base.html' %} {% block title %} Home - Electronics Store
+{%endblock %} {% load static %} {% block content %}
+<!-- Hero Section -->
+<header class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Welcome to ElectroShop</h1>
+    <p class="lead">Find the best deals on the latest electronics</p>
+    <a href="{% url 'products.home' %}" class="btn btn-light btn-lg"
+      >Shop Now</a
+    >
+  </div>
+</header>
+
+<!-- Featured Products -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">Featured Products</h2>
+  <div class="row">
+    {% for prd in products %}
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="{{prd.image_url}}" class="card-img-top" alt="Laptop" />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{prd.name}}</h5>
+          <p class="card-text text-primary fw-bold">{{prd.price}}</p>
+          <a
+            href="{% url 'products.profile' prd.id %}"
+            class="btn btn-outline-primary"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section class="bg-light py-5">
+  <div class="container text-center">
+    <h2>Shop by Category</h2>
+    <div class="row mt-4">
+      <div class="col-md-3">
+        <a href="#" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <h5>Laptops</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <h5>Smartphones</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <h5>Tablets</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-decoration-none">
+          <div class="card shadow-sm p-3">
+            <h5>Accessories</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">What Our Customers Say</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>
+          “ElectroShop has the best deals on electronics! Highly recommended.”
+        </p>
+        <p class="text-end">- Ahmed Soliman</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>“Great products and fast delivery. Excellent customer support.”</p>
+        <p class="text-end">- Iman Goma</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>“I bought a laptop from here, and it works perfectly! 5 stars.”</p>
+        <p class="text-end">- Ahmad Ramadan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
