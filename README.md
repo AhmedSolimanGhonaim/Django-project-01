@@ -36,7 +36,7 @@ SolEctro is an e-commerce platform for electronics, offering a wide range of pro
 
 ## Screenshot
 
-![SolEctro Screenshot](static/home/images/sc.png)
+![SolEctro Screenshot](home/static/home/images/sc.png)
 
 ## Usage
 
@@ -56,4 +56,3 @@ SolEctro is an e-commerce platform for electronics, offering a wide range of pro
 Pull requests are welcome. Please open an issue first to discuss any major changes.
 
 ##
-
