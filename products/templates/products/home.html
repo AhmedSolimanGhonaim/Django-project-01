@@ -7,17 +7,24 @@
   <div class="col-md-12 d-flex justify-content-center mx-auto my-3">
     {% for prd in products %}
     <div class="card shadow-sm mx-3 text-center">
-      <img
-        src="{% static 'products/images/'|add:prd.image%}"
-        class="card-img-top"
-        alt="Product Image"
-      />
+      <img src="{{prd.image.url}}" class="card-img-top" alt="Product Image" />
       <div class="card-body">
         <h5 class="card-title">{{prd.name}}</h5>
         <p class="card-text text-primary fw-bold">{{prd.price}}</p>
-        <a href="{% url 'products.profile' prd.id %}" class="btn btn-outline-primary">View Details</a>
+        <a
+          href="{% url 'products.profile' prd.id %}"
+          class="btn btn-outline-primary"
+          >View Details</a
+        >
       </div>
+
+      <a href="{% url 'product.delete' prd.id %}" class="btn btn-danger">delete<a />
+
+      <a href="{% url 'product.update' prd.id %}" class="btn btn-info" href=""
+        >update</a
+      >
     </div>
+
     {% endfor %}
   </div>
 </div>

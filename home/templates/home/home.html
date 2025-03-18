@@ -10,7 +10,7 @@
     >
   </div>
 </header>
-
+{% comment %} <div>{{products}}</div> {% endcomment %}
 <!-- Featured Products -->
 <section class="container py-5">
   <h2 class="text-center mb-4">Featured Products</h2>
@@ -18,7 +18,7 @@
     {% for prd in products %}
     <div class="col-md-4">
       <div class="card shadow-sm">
-        <img src="{{prd.image_url}}" class="card-img-top" alt="Laptop" />
+        <img src="/media/{{ prd.image }}"  class="img-fluid" />
         <div class="card-body text-center">
           <h5 class="card-title">{{prd.name}}</h5>
           <p class="card-text text-primary fw-bold">{{prd.price}}</p>
@@ -27,6 +27,7 @@
             class="btn btn-outline-primary"
             >View Details</a
           >
+
         </div>
       </div>
     </div>

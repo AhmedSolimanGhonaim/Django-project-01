@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.conf.urls.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
      'home.apps.HomeConfig',
      'products.apps.ProductsConfig',
      'categories.apps.CategoriesConfig',
-   
+     'cart.apps.CartConfig'
     
 ]
 
@@ -81,8 +82,12 @@ WSGI_APPLICATION = 'py45iti.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'solecdb',
+        'HOST':'localhost',
+        'USER':'solypostgres',
+        'PASSWORD':'119119',
+        'PORT':5432
     }
 }
 
@@ -120,10 +125,29 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+import os
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL='/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
+# CSRF Configuration
+CSRF_COOKIE_AGE = 60 * 60 * 24 * 7  # 7 days
+# CSRF_COOKIE_SECURE = True  # Ensure CSRF token is sent over HTTPS
+# CSRF_USE_SESSIONS = False  # Keep CSRF token in cookies, not session storage
+
+# # Session Configuration
+# SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 7 days
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Keep session after closing browser
+# SESSION_COOKIE_SECURE = True  # Send session only over HTTPS
+# SESSION_ENGINE = "django.contrib.sessions.backends.db"  # Store session in DB

@@ -1,0 +1,28 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.cart-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.cart-item img {
+  max-width: 100px;
+  border-radius: 10px;
+}
+
+.quantity-input {
+  width: 60px;
+  text-align: center;
+}
+
+.checkout-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
