@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.templatetags.static import static
 # Create your views here.
 from products.models import Products
+
 
 # featured_products = [
 #     {
@@ -36,6 +37,20 @@ def all_products(req):
     
     # return render (req,'home/home.html',context={ 'products':Products.objects.all()})   
      return render (req, 'home/home.html', context={'products':Products.objects.filter(active=True)})
+
+
+def add_to_cart(req, id):
+    product = Products.objects.get(id=id)
+    if not product.incart:
+        product.incart = True
+        product.cart_quantity = 1
+    else:
+        product.cart_quantity += 1
+    product.save()
+    # Update cart count in session
+    cart_count = Products.objects.filter(incart=True).count()
+    req.session['cart_count'] = cart_count
+    return redirect('home')
 
 # def featured_home(request):
 #     # return with template 

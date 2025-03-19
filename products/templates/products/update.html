@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %} {% block title %} update form {% endblock %}
-
 {% load static %} {% block content %}
 
 <h2>update a product</h2>
@@ -8,19 +7,35 @@
   {% csrf_token %}
   <div class="mb-3">
     <label class="form-label">Product Name</label>
-    <input name="namepr" value="{{oldPR.name}}"  type="text" />
+    <input
+      name="namepr"
+      value="{{oldPR.name}}"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input
+      name="pricepr"
+      value="{{oldPR.price}}"
+      type="number"
+      step="0.01"
+      min="0"
+      class="form-control"
+    />
   </div>
   <div class="mb-3">
     <label class="form-label">Product Image</label>
-    <input name="imagepr"   type="file" />
+    <input name="imagepr" type="file" />
   </div>
   <div class="mb-3">
     <label class="form-label">Quantity</label>
-    <input name="quantitypr" value="{{oldPR.quantity}}"  type="number" />
+    <input name="quantitypr" value="{{oldPR.quantity}}" type="number" />
   </div>
   <div class="mb-3">
     <label class="form-label">Description</label>
-    <input type="text" value="{{oldPR.description}}"  name="descriptionpr" />
+    <input type="text" value="{{oldPR.description}}" name="descriptionpr" />
   </div>
   <input type="submit" name="submitpr" />
 </form>

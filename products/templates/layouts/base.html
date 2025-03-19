@@ -6,6 +6,7 @@
       <title>
         {%block title %} 
         {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
       <link
         rel="stylesheet"
@@ -35,8 +36,14 @@
                 <a class="nav-link {% if request.path == "/products/home" %} active {% endif %}" href="{%url 'products.home'%}">Products</a>
               </li>
               <li class="nav-item">
-                {% comment %}  {% endcomment %}
-                <a class="nav-link" href="{% url 'products.cart'%}">Mycart</a>
+                <a class="nav-link" href="{% url 'cart.products' %}">
+                  <i class="bi bi-cart"></i>
+                  {% with cart_count=request.session.cart_count|default:0 %}
+                    {% if cart_count > 0 %}
+                      <span class="badge bg-danger">{{ cart_count }}</span>
+                    {% endif %}
+                  {% endwith %}
+                </a>
               </li>
               <li class="nav-item">
                 <a class="btn btn-primary" href="#">Login</a>

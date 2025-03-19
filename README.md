@@ -1,21 +1,21 @@
-# Project: SolEctro - Electronics Store
+# SolEctro - Electronics Store
 
 ## Screenshot
 
 ![SolEctro Screenshot](home/static/home/images/sc.png)
 
 ## Description
-
-SolEctro is an e-commerce platform for electronics, offering a wide range of products including laptops, smartphones, tablets, and accessories. The platform features user authentication, product browsing, categories, and a shopping cart functionality.
+SolEctro is a modern e-commerce platform for electronics, built with Django and Bootstrap. 
 
 ## Features
-
-- Modern Bootstrap-based UI
-- Featured products section on the homepage
-- Dynamic product details page
-- Categories for better organization
-- User authentication (login/logout)
-- Shopping cart functionality
+- Responsive product catalog
+- Shopping cart with real-time updates
+- Product quantity management
+- Dynamic cart badge counter
+- Price calculations with tax and shipping
+- Image upload support
+- Stock level tracking
+- Admin product management
 
 ## Installation
 
@@ -24,7 +24,7 @@ SolEctro is an e-commerce platform for electronics, offering a wide range of pro
    git clone https://github.com/your-username/solEctro.git
    cd solEctro
    ```
-2. Create a virtual environment and activate it:
+2. Create and activate virtual environment:
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -33,26 +33,36 @@ SolEctro is an e-commerce platform for electronics, offering a wide range of pro
    ```sh
    pip install -r requirements.txt
    ```
-4. Run the development server:
+4. Configure the database in settings.py
+
+5. Run migrations:
+   ```sh
+   python manage.py migrate
+   ```
+
+6. Create superuser:
+   ```sh
+   python manage.py createsuperuser
+   ```
+
+7. Run development server:
    ```sh
    python manage.py runserver
    ```
 
 ## Usage
+1. Visit `/admin` to manage products
+2. Browse products on homepage
+3. Add products to cart
+4. Manage quantities in cart
+5. Proceed to checkout
 
-- Browse products and categories
-- View product details
-- Add products to the cart
-- Checkout (Feature coming soon)
-
-## Technologies Used
-
-- **Backend:** Django, Python
-- **Frontend:** HTML, CSS, Bootstrap
-- **Database:** SQLite (default, can be changed)
+## Technologies
+- Django 5.1.7
+- PostgreSQL
+- Bootstrap 5
+- Python 3
 
 ## Contributing
 
-Pull requests are welcome. Please open an issue first to discuss any major changes.
-
-##
+Please read CONTRIBUTING.md for details on submitting pull requests.
